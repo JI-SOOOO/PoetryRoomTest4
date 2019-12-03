@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Poetry Room</title>
+
+	<style type="text/css">
+		@font-face { font-family: 'RIDIBatang'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+		
+		h1 {font-size: 40pt; position: center; 
+				font-family: 'RIDIBatang';font-weight: normal; font-style: normal;text-align: center;
+				margin-top: 70px; margin-bottom: 0}
+
+				
+		h3 {position: center; 
+				font-family: 'RIDIBatang';font-weight: normal; font-style: normal;text-align: center;
+				margin-bottom: 0}
+
+		body, html {margin: 0px; padding: 0;}
+		body, html {height: 100%, margin: auto; overflow: hidden;}
+
+		body{background-image: url("21.gif"); height: 110vh; background-position: center; background-repeat: no-repeat; background-size: cover;}
+
+
+		.night {position: absolute; z-index: 99; margin-left: 20%}
+		.day {position: absolute; z-index: 98;}
+	</style>
+
+</head>
+
+<body>
+	
+	<!--<button type="button" onclick="myFuntion()">바꾸기</button>-->
+	<div>
+	<input type="image" src="moon.png" width="40" onclick="myFuntion1()" class="night" style="margin-left: 55%; margin-top: 5.1%">
+	</div>
+
+	<div>
+	<input type="image" src="sun3.png" width="50" onclick="myFuntion2()" class="day" style="margin-left: 41.5%; margin-top: 5%">
+	</div>
+
+	<audio id="fpt"><source src="fpt.mp3" type="audio/ogg"></audio>
+
+
+	<div id="main">
+		<div>
+			<h1>시; 방</h1>
+			<h3>Poetry Room</h3>
+		</div>
+		
+
+		<div id="firstDoor" style="position: relative;">
+			<a href="./door1/index.html" target="_blank">
+			<img src="door.png" id="door1" style="position: relative; left: 20%; top: 10vh; opacity: 1; cursor: pointer; z-index: 15; height: 350px">
+			<img src="door3.png" id="door3" style="position: relative; left: 10%; top: 10vh; opacity: 0; z-index: 9;  height: 350px">
+			</a>
+		</div>
+
+
+		<div id="SecondDoor" style="position: relative;">
+			<img src="door4.png" id="door4" style="position: relative; left: 44%; top: -28vh; opacity: 1; cursor: pointer; z-index: 15; height: 350px">
+			<img src="door5.png" id="door5" style="position: relative; left: 32%; top: -28vh; opacity: 0; z-index: 9;  height: 350px">
+		</div>
+
+		<div id="firstPt" style="position: relative; ">
+			<img src="fpt.png" id="pt" style="width: 500px; height: auto; position: relative; top: -500px;left: 700px; opacity: 0;">
+		</div>
+
+
+	
+		<!--
+		<div id="imgg" style="position: relative; top: 300px; left: 100px; z-index: 5; width: 10px; height: 10px;">
+			<img src="18.gif" id="imgg1" style="position: relative; width: 200px;  top: 0px; left: 50px; opacity: 0;">
+			<img src="17.gif" id="imgg2" style="position: relative; top: 0px; left: 0px; opacity: 0;">
+			<img src="16.gif" id="imgg3" style="width: 350px; position: relative; top: 0px; left: 300px; opacity: 0;">
+		</div>
+		-->
+
+	</div>
+
+	<script type="text/javascript">
+		function myFuntion1(){
+			document.body.style.backgroundImage = "url('30.gif')"
+			document.body.style.color = "white";
+		}
+		
+
+		function myFuntion2(){
+			document.body.style.backgroundImage = "url('21.gif')"
+			document.body.style.color = "black";
+		}
+
+
+		var state = "off";
+     	
+		door1.onclick = function function_name(argument) {
+			// body...
+			if(state == "off"){
+           		door1.style.opacity = "1";
+				door3.style.opacity = "0";
+           		fpt.pause();
+           		state = "on";}
+        	else{
+        		door1.style.opacity = "0";
+        		door3.style.opacity = "1";
+           		fpt.play();
+        		state = "off";};
+		}
+
+
+		door4.onclick = function function_name(argument) {
+			// body...
+			if(state == "off"){
+           		door4.style.opacity = "1";
+				door5.style.opacity = "0";
+				pt.style.opacity = "0";
+           		fpt.pause();
+           		state = "on";}
+        	else{
+        		door4.style.opacity = "0";
+        		door5.style.opacity = "1";
+				pt.style.opacity = "1";
+           		fpt.play();
+        		state = "off";};
+		}
+		
+		
+
+
+
+
+	</script>
+
+
+</body>
+</html>
